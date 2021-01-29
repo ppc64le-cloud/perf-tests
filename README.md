@@ -13,3 +13,14 @@ To run all verify* scripts before pushing to remote branch (useful for catching 
 ```
 cp _hook/pre-push .git/hooks/pre-push
 ```
+
+## NOTE for running perf-tests in ppc64le single node cluster
+
+If you have created a single node containerd kubernetes cluster using https://github.com/ppc64le-cloud/k8s-ansible, add the below entries to your /root/.bashrc file on the edge/bastion/cluster node so that these env variables are initialsed in every session - 
+```
+export ETCD_HOST=<host IP>
+export ETCD_CERTIFICATE=/etc/kubernetes/pki/etcd/peer.crt
+export ETCD_KEY=/etc/kubernetes/pki/etcd/peer.key
+export GOPATH=/usr/bin/go/bin OR export GOPATH=<path for perf-scale repo clone>
+export NODE_PRELOAD_IMAGES=gcr.io/google_containers/pause:3.1
+```
