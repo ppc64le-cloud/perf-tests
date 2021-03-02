@@ -47,3 +47,8 @@ short while for perfdash to start since it needs to fetch the job artifacts firs
 
 You can alter startup parameters (like number of jobs for which history is fetched)
 by editing the makefile.
+
+## How to build the perfdash image
+
+* `make perfdash` - This will generate a perfdash executable file in the perfdash directory
+* `docker build -t quay.io/powercloud/perfdash:latest -f ./Dockerfile --no-cache .`

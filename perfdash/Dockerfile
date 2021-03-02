@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM debian:jessie
+FROM quay.io/powercloud/debian:stable
 RUN apt-get update
 RUN apt-get install -y -qq ca-certificates
 ADD perfdash /perfdash
